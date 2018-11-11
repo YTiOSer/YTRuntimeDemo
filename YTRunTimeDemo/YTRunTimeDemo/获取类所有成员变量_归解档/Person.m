@@ -23,6 +23,12 @@
     
     //获取所有成员变量
     unsigned int outCount = 0;
+    /*
+     参数:
+     1.哪个类
+     2.接收值的地址, 用于存放属性的个数
+     3.返回值: 存放所有获取到的属性, 可调出名字和类型
+     */
     Ivar *ivarArray = class_copyIvarList([self class], &outCount);
     
     for (int i = 0; i < outCount; i++) {
@@ -51,12 +57,7 @@
     if (self) {
         //获取所有成员变量
         unsigned int outCount = 0;
-        /*
-         参数:
-            1.哪个类
-            2.接收值的地址, 用于存放属性的个数
-            3.返回值: 存放所有获取到的属性, 可调出名字和类型
-         */
+        
         Ivar *ivarArray = class_copyIvarList([self class], &outCount);
         
         for (int i = 0; i < outCount; i++) {
